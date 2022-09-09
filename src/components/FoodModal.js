@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   Modal,
@@ -8,10 +7,10 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
 
-export default function FoodModal({ title }) {
+export default function FoodModal({ title, price }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -22,8 +21,9 @@ export default function FoodModal({ title }) {
         <ModalContent>
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody></ModalBody>
-
+          <ModalBody>
+          <h1>Buy {title} for {price}</h1>
+          </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
